@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { TabbedForm } from './components/TabbedForm/TabbedForm.component'
+import { CardList } from './components/CardList/CardList.component'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ display: 'flex' }}>
+      <CardList cards={[{ title: 'card 1' }, { title: 'card 2' }]} />
+      <TabbedForm />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

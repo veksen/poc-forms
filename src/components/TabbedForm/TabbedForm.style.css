@@ -1,0 +1,7 @@
+.TabbedForm {
+  width: 400px;
+}
+
+.TabbedForm__content {
+  padding: 8px;
+}

@@ -1,0 +1,14 @@
+.Tabs {
+  display: flex;
+}
+
+.Tabs__tab {
+  flex: 1 0 auto;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Tabs__tab.selected {
+  background: #444;
+  color: #fff;
+}

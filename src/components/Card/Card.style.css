@@ -1,0 +1,8 @@
+.Card {
+  padding: 8px;
+  border: 2px solid #bbb;
+}
+
+.Card + .Card {
+  margin-top: 4px;
+}
