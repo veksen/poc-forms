@@ -4,13 +4,19 @@ import { ButtonBar } from '../ButtonBar/ButtonBar.component'
 import './TabbedForm.style.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { IStoreState } from '../../store'
+import { ICard } from '../Card/Card.component'
+import { IDetailPanelReducer } from '../../redux/reducer/detailPanelReducer'
 
 export interface ITabContent {
   title: string
   content: React.ReactElement
 }
 
-export const TabbedForm: React.FC = () => {
+interface ITabbedForm {
+  content: IDetailPanelReducer['content']
+}
+
+export const TabbedForm: React.FC<ITabbedForm> = props => {
   const dispatch = useDispatch()
   const currentTab = useSelector((state: IStoreState) => state.detailPanel.currentTab)
 
@@ -31,7 +37,10 @@ export const TabbedForm: React.FC = () => {
     <div className="TabbedForm">
       <ButtonBar />
       <Tabs tabs={tabs} currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      <div className="TabbedForm__content">{tabs[currentTab].content}</div>
+      <div className="TabbedForm__content">
+        <div>{tabs[currentTab].content}</div>
+        <div>{props.content ? props.content.title : 'no content selected!'}</div>
+      </div>
     </div>
   )
 }

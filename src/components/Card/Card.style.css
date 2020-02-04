@@ -1,6 +1,11 @@
 .Card {
   padding: 8px;
   border: 2px solid #bbb;
+  cursor: pointer;
+}
+
+.Card:hover {
+  background: #eee;
 }
 
 .Card + .Card {
